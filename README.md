@@ -13,7 +13,7 @@ This is a personal project just for research purposes, to discover the capabilit
 To use the `create_page.py` script, you will need to have the `atlassian-python-api` and `revChatGPT` libraries installed. 
 You can install this library using `pip install -r requirements.txt`.
 
-Once you have installed the required libraries, you can use the `create_page.py` script by providing the following input:
+Once you have installed the required libraries and set the environment variables, use `python create_page.py` by providing the following informations when asked:
 
 - Your Confluence URL, username, and password: these will be used to authenticate to Confluence.
 - The input text that will be used as the basis for the Confluence page. This input text will be provided to ChatGPT to generate the page content.
