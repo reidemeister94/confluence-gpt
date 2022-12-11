@@ -1,8 +1,9 @@
-from typing import Tuple
-from atlassian import Confluence
-import os
-from revChatGPT.revChatGPT import Chatbot
 import logging
+import os
+from typing import Tuple
+
+from atlassian import Confluence
+from revChatGPT.revChatGPT import Chatbot
 
 
 def get_confluence_connection() -> Confluence:
