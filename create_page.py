@@ -3,7 +3,7 @@ import os
 from typing import Tuple
 
 from atlassian import Confluence
-from revChatGPT.revChatGPT import Chatbot
+from revChatGPT.ChatGPT import Chatbot
 
 
 def get_confluence_connection() -> Confluence:
@@ -20,7 +20,7 @@ def get_openai_connection() -> Chatbot:
     openai_config = {
         "session_token": os.environ.get("SESSION_TOKEN", None),
     }
-    chatbot = Chatbot(openai_config, conversation_id=None)
+    chatbot = Chatbot(config=openai_config, conversation_id=None)
     return chatbot
 
 
