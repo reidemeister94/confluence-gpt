@@ -24,7 +24,7 @@ The script will use this input to authenticate to Confluence, generate the page 
 
 To use the `create_page.py` script, you will need to set the following environment variables:
 
--   `JIRA_URL`: The URL for your JIRA instance.
--   `JIRA_USER`: Your JIRA username.
--   `JIRA_API_TOKEN`: Your JIRA API token. You can generate an API token by following the instructions [here](https://confluence.atlassian.com/cloud/api-tokens-938839638.html).
--   `SESSION_TOKEN`: A session token that will be used to authenticate to ChatGPT. You can generate a session token by following the instructions [here](https://github.com/acheong08/ChatGPT/wiki/Setup).
+- `JIRA_URL`: The URL for your JIRA instance.
+- `JIRA_USER`: Your JIRA username.
+- `JIRA_API_TOKEN`: Your JIRA API token. You can generate an API token by following the instructions [here](https://confluence.atlassian.com/cloud/api-tokens-938839638.html).
+- `OPENAI_API_KEY`: OpenAI Api Key that will be used to authenticate to ChatGPT. You can generate a new api key by following the instructions [here](https://github.com/acheong08/ChatGPT).

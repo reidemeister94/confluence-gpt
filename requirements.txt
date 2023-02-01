@@ -1,2 +1,2 @@
 atlassian-python-api==3.32.*
-revChatGPT==0.*
+revChatGPT==1.0.*

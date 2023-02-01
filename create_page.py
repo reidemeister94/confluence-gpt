@@ -3,7 +3,7 @@ import os
 from typing import Tuple
 
 from atlassian import Confluence
-from revChatGPT.ChatGPT import Chatbot
+from revChatGPT.Official import Chatbot
 
 
 def get_confluence_connection() -> Confluence:
@@ -17,10 +17,8 @@ def get_confluence_connection() -> Confluence:
 
 
 def get_openai_connection() -> Chatbot:
-    openai_config = {
-        "session_token": os.environ.get("SESSION_TOKEN", None),
-    }
-    chatbot = Chatbot(config=openai_config, conversation_id=None)
+    api_key = os.environ.get("OPENAI_API_KEY", None)
+    chatbot = Chatbot(api_key=api_key)
     return chatbot
 
 
@@ -82,7 +80,7 @@ def main():
         f"\n\n'{page_requirements}'"
     )
 
-    chat_response = chatbot.get_chat_response(chat_message_content)["message"]
+    chat_response = chatbot.ask(chat_message_content)["choices"][0]["text"]
 
     logging.info("Creating page in Confluence")
     # create a confluence page with the title and content
