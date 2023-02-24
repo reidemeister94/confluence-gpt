@@ -27,4 +27,4 @@ To use the `create_page.py` script, you will need to set the following environme
 - `JIRA_URL`: The URL for your JIRA instance.
 - `JIRA_USER`: Your JIRA username.
 - `JIRA_API_TOKEN`: Your JIRA API token. You can generate an API token by following the instructions [here](https://confluence.atlassian.com/cloud/api-tokens-938839638.html).
-- `OPENAI_API_KEY`: OpenAI Api Key that will be used to authenticate to ChatGPT. You can generate a new api key by following the instructions [here](https://github.com/acheong08/ChatGPT).
+- `OPENAI_ACCESS_TOKEN`: OpenAI access token used to authenticate to ChatGPT. In order to retrieve the access token, go to https://chat.openai.com/api/auth/session and get the value of "accessToken" variable.

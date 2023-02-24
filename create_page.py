@@ -3,7 +3,7 @@ import os
 from typing import Tuple
 
 from atlassian import Confluence
-from revChatGPT.Official import Chatbot
+from revChatGPT.V1 import Chatbot
 
 
 def get_confluence_connection() -> Confluence:
@@ -17,8 +17,8 @@ def get_confluence_connection() -> Confluence:
 
 
 def get_openai_connection() -> Chatbot:
-    api_key = os.environ.get("OPENAI_API_KEY", None)
-    chatbot = Chatbot(api_key=api_key)
+    access_token = os.environ.get("OPENAI_ACCESS_TOKEN", None)
+    chatbot = Chatbot({"access_token": access_token})
     return chatbot
 
 
@@ -76,11 +76,15 @@ def main():
     chat_message_content = (
         f"Write a well formatted Confluence page using the markdown syntax.\n"
         f"The main topic of the page is {page_topic}.\nThese are the paragraphs that have to be in the page:\n"
-        f"{page_structure}\n\nThese are the additional requirements for the page: "
+        f"{page_structure}\n\nIn addition, i want you to apply these constraints for writing the page: "
         f"\n\n'{page_requirements}'"
     )
 
-    chat_response = chatbot.ask(chat_message_content)["choices"][0]["text"]
+    chat_response = ""
+    for data in chatbot.ask(
+            chat_message_content
+    ):
+        chat_response = data["message"]
 
     logging.info("Creating page in Confluence")
     # create a confluence page with the title and content
