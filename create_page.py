@@ -81,9 +81,7 @@ def main():
     )
 
     chat_response = ""
-    for data in chatbot.ask(
-            chat_message_content
-    ):
+    for data in chatbot.ask(chat_message_content):
         chat_response = data["message"]
 
     logging.info("Creating page in Confluence")
