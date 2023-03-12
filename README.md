@@ -1,5 +1,5 @@
 # Confluence GPT
-This repository contains a Python script that uses ChatGPT to generate Confluence pages automatically. You can use this script to quickly create new pages by providing input text and customizing page elements such as the title, formatting, and content. The generated content can be published promptly to Confluence using the python APIs. This repository helps automate the creation of Confluence pages or uses natural language processing to generate content.
+This repository contains a Python script that uses ChatGPT to generate Confluence pages automatically. You can use this script to quickly create new pages by providing input text and customizing page elements such as the title, formatting, and content. The generated content can be published promptly to Confluence using the python APIs.
 
 
 # Disclaimer
